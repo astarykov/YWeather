@@ -1,18 +1,17 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  YWeather
-//
-//  Created by tonny on 5/20/20.
-//  Copyright © 2020 tonny. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = .systemBlue
     }
 
 

@@ -36,9 +36,9 @@ class MainViewController: UIViewController {
         
         let request = Request(city: Constants.defaultCity, apiKey: Constants.apiKey, range: .week)
 
-        NetworkRequestService.shared.getWeatherData(request: request, completion: { (model) in
+        DataObjectProvider.shared.provideData(request: request) { (model) in
             self.dataModel = model
-        })
+        }
     }
     
     fileprivate func addSubviewsWithAutolayouts() {
@@ -108,8 +108,8 @@ extension MainViewController: ChartViewDelegate {
 extension MainViewController: ISegmentControlProtocol {
     func segmentControlDidChangeValue(value: SegmentControlRange) {
         let request = Request(city: Constants.defaultCity, apiKey: Constants.apiKey, range: value)
-        NetworkRequestService.shared.getWeatherData(request: request, completion: { (model) in
+        DataObjectProvider.shared.provideData(request: request) { (model) in
             self.dataModel = model
-        })
+        }
     }
 }

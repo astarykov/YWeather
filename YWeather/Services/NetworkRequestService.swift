@@ -24,8 +24,6 @@ struct Request {
 
 
 class NetworkRequestService {
-    static let shared = NetworkRequestService()
-    private init() {}
 
     public func getWeatherData(request: Request, completion: @escaping (_ obj: WeatherDataModel)->()) {
         let requestAF = AF.request(request.getUrl())

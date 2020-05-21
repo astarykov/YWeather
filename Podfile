@@ -10,6 +10,7 @@ target 'YWeather' do
 	pod 'Charts'
 	pod 'ChartsRealm'
 	pod 'RealmSwift'
+  pod 'Unrealm'
 
   target 'YWeatherTests' do
     inherit! :search_paths

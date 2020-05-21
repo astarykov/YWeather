@@ -5,29 +5,31 @@
 
 import Foundation
 import RealmSwift
+import Unrealm
 
-struct WeatherDataModel: Codable {
+typealias RealmCodable = Realmable & Codable
+
+struct WeatherDataModel: RealmCodable {
     var current: Current?
     var daily: [WeatherDalyModel]?
 }
 
-struct Current: Codable {
+struct Current: RealmCodable {
     var dt: Int?
 }
 
-struct WeatherDalyModel: Codable {
+struct WeatherDalyModel: RealmCodable {
     var dt: Int?
     var temp: Temp?
-    var weather: [Weather]?
+    var weather: [WeatherIcon]?
     var wind_speed: Double?
 }
 
-struct Weather: Codable {
-    var description: String?
-    var icon: String
+struct WeatherIcon: RealmCodable {
+    var icon: String?
 }
 
-struct Temp: Codable {
+struct Temp: RealmCodable {
     var day: Double?
     var min: Double?
     var max: Double?

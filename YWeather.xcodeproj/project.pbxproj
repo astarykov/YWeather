@@ -32,6 +32,8 @@
 		E1A5AFF72475884A009110B4 /* IObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5AFF62475884A009110B4 /* IObserverProtocol.swift */; };
 		E1A5AFF92475A82C009110B4 /* CaseIterable+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5AFF82475A82C009110B4 /* CaseIterable+Index.swift */; };
 		E1A5AFFD247653CA009110B4 /* ISegmentControlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5AFFC247653CA009110B4 /* ISegmentControlProtocol.swift */; };
+		E1A5AFFF2476590F009110B4 /* LocalDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5AFFE2476590F009110B4 /* LocalDatabaseService.swift */; };
+		E1A5B00124769B45009110B4 /* DataObjectProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5B00024769B45009110B4 /* DataObjectProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		E1A5AFF62475884A009110B4 /* IObserverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IObserverProtocol.swift; sourceTree = "<group>"; };
 		E1A5AFF82475A82C009110B4 /* CaseIterable+Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseIterable+Index.swift"; sourceTree = "<group>"; };
 		E1A5AFFC247653CA009110B4 /* ISegmentControlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISegmentControlProtocol.swift; sourceTree = "<group>"; };
+		E1A5AFFE2476590F009110B4 /* LocalDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseService.swift; sourceTree = "<group>"; };
+		E1A5B00024769B45009110B4 /* DataObjectProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjectProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				E1A5AFEF24757A48009110B4 /* NetworkRequestService.swift */,
+				E1A5AFFE2476590F009110B4 /* LocalDatabaseService.swift */,
+				E1A5B00024769B45009110B4 /* DataObjectProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -485,7 +491,9 @@
 				E1A5AFE22475560B009110B4 /* TemperatureChartView.swift in Sources */,
 				E1A5AFF224758242009110B4 /* Constants.swift in Sources */,
 				E1A5AFCF24752FC9009110B4 /* HeaderView.swift in Sources */,
+				E1A5B00124769B45009110B4 /* DataObjectProvider.swift in Sources */,
 				E1A5AFF92475A82C009110B4 /* CaseIterable+Index.swift in Sources */,
+				E1A5AFFF2476590F009110B4 /* LocalDatabaseService.swift in Sources */,
 				E1A5AFF024757A48009110B4 /* NetworkRequestService.swift in Sources */,
 				E1A5AFFD247653CA009110B4 /* ISegmentControlProtocol.swift in Sources */,
 			);

@@ -2,9 +2,6 @@
 //  SceneDelegate.swift
 //  YWeather
 //
-//  Created by tonny on 5/20/20.
-//  Copyright © 2020 tonny. All rights reserved.
-//
 
 import UIKit
 

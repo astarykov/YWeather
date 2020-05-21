@@ -27,6 +27,7 @@ struct WeatherDalyModel: RealmCodable {
 
 struct WeatherIcon: RealmCodable {
     var icon: String?
+    var main: String?
 }
 
 struct Temp: RealmCodable {

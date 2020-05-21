@@ -2,9 +2,6 @@
 //  DataObjectProvider.swift
 //  YWeather
 //
-//  Created by tonny on 5/21/20.
-//  Copyright © 2020 tonny. All rights reserved.
-//
 
 import Foundation
 

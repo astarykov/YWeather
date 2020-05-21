@@ -8,6 +8,7 @@ class CollectionViewCell: UICollectionViewCell {
     fileprivate var temperature = UILabel()
     fileprivate var date = UILabel()
     fileprivate var icon = UIImageView()
+    fileprivate var iconPlaceHolder = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +20,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func setCellLayout() {
+        
         self.contentView.layer.cornerRadius = 20
         self.contentView.layer.masksToBounds = true
         self.contentView.layer.borderColor = UIColor(red: 0.7, green: 0.3, blue:0.1, alpha: 1.0).cgColor
@@ -27,6 +29,12 @@ class CollectionViewCell: UICollectionViewCell {
         contentView.addSubview(date)
         contentView.addSubview(icon)
 
+        icon.addSubview(iconPlaceHolder)
+        iconPlaceHolder.textColor = .white
+        iconPlaceHolder.translatesAutoresizingMaskIntoConstraints = false
+        iconPlaceHolder.centerYAnchor.constraint(equalTo: icon.centerYAnchor).isActive = true
+        iconPlaceHolder.centerXAnchor.constraint(equalTo: icon.centerXAnchor).isActive = true
+        
         temperature.translatesAutoresizingMaskIntoConstraints = false
         date.translatesAutoresizingMaskIntoConstraints = false
         icon.translatesAutoresizingMaskIntoConstraints = false
@@ -57,10 +65,15 @@ class CollectionViewCell: UICollectionViewCell {
     
     func configure(with data: WeatherDataModel, at index: Int) {
         if let daily = data.daily?[index], let temp = daily.temp?.day, let iconId = daily.weather?.first?.icon, let day = daily.dt {
+            iconPlaceHolder.text = daily.weather?.first?.main
             temperature.text = "\(round(temp)) °C"
             date.text = Utils.convertTimeStampIntoDay(day)
             let iconId = iconId
-            icon.load(url: URL(string: "https://openweathermap.org/img/wn/\(iconId)@2x.png")!)
+            if let url = URL(string: "https://openweathermap.org/img/wn/\(iconId)@2x.png") {
+                icon.load(url: url, completion: { result in
+                    self.iconPlaceHolder.text = result ? "" : self.iconPlaceHolder.text
+                })
+            }
         } else {
             print("Unable to parse one of data fields")
         }
@@ -71,5 +84,6 @@ class CollectionViewCell: UICollectionViewCell {
         temperature.text = ""
         date.text = ""
         icon.image = nil
+        iconPlaceHolder.text = ""
     }
 }
